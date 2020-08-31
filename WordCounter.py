@@ -1,0 +1,3 @@
+import spacy
+
+class WordCounter():
