@@ -6,14 +6,25 @@ import re
 
 class WordCounter():
     def __init__(self, file_name):
-        self.file_name = file_name
+        self.file_name = '/content/drive/My Drive/Test Files/' + file_name
         self.tokens = []
         self.words = []
         self.word_count_dict = {}
         self.total_word_count = 0
         self.total_token_count = 0
         self.unique_word_count = 0
-        nltk.download('punkt')
+        # nltk.download('punkt')
+
+    def run(self):
+        success = self.txt_tokenizer()
+        if not success:
+            return False
+        self.get_words()
+        self.get_word_count_dict()
+        self.count_tokens()
+        self.count_words()
+        self.count_unique_words()
+        return success
 
     def get_word_count_dict(self):
         for word in self.words:
