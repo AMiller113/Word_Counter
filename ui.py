@@ -4,7 +4,6 @@ class ui():
         self.exit_message = 'Thank you for using this program, farewell.'
         self.error_message = 'There has been an error, likely an invalid file path. Please restart the program.'
         self.file_name = ''
-        # self.file_extension = ''
 
     def handle_input(self):
         self.file_name = input(self.input_message)
