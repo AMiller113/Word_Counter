@@ -1,5 +1,5 @@
-import word_counter
-import ui
+from word_counter import WordCounter
+from ui import ui
 
 if __name__ == "__main__":
     _ui = ui()

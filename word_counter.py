@@ -6,14 +6,14 @@ import re
 
 class WordCounter():
     def __init__(self, file_name):
-        self.file_name = '/content/drive/My Drive/Test Files/' + file_name
+        self.file_name = file_name
         self.tokens = []
         self.words = []
         self.word_count_dict = {}
         self.total_word_count = 0
         self.total_token_count = 0
         self.unique_word_count = 0
-        # nltk.download('punkt')
+        nltk.download('punkt') # TODO find a way to deactivate after first use
 
     def run(self):
         success = self.txt_tokenizer()
@@ -35,7 +35,7 @@ class WordCounter():
 
     def txt_tokenizer(self):
         try:
-            file = open(self.file_name, mode='r')
+            file = open(self.file_name, mode='r', encoding='utf-8')
         except:
             return False
         else:
